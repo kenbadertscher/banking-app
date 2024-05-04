@@ -5,9 +5,6 @@ import {
   Sheet,
   SheetTrigger,
   SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetDescription,
 } from "./ui/sheet"
 import { Link } from "lucide-react"
 import { sidebarLinks } from "../constants"
