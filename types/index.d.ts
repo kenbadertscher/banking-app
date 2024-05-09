@@ -7,6 +7,73 @@ declare type SearchParamProps = {
 
 // ========================================
 
+////////////////////////////////////////////////////////////////////////////////
+// declare type User = sdk.Models.Document & {
+//   accountId: string;
+//   email: string;
+//   name: string;
+//   items: string[];
+//   accessToken: string;
+//   image: string;
+// };
+
+////////////////////////////////////////////////////////////////////////////////
+// declare type User = {
+//   $id: string;
+//   email: string;
+//   userId: string;
+//   dwollaCustomerUrl: string;
+//   dwollaCustomerId: string;
+//   firstName: string;
+//   lastName: string;
+//   address1: string;
+//   city: string;
+//   state: string;
+//   postalCode: string;
+//   dateOfBirth: string;
+//   ssn: string;
+// };
+
+declare type User = {
+  firstName: string;
+  lastName: string;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// declare type Bank = {
+//   $id: string;
+//   accountId: string;
+//   bankId: string;
+//   accessToken: string;
+//   fundingSourceUrl: string;
+//   userId: string;
+//   sharableId: string;
+// };
+
+// declare type Bank = {
+//   currentBalance: number;
+// }
+
+
+////////////////////////////////////////////////////////////////////////////////
+// declare type Account = {
+//   id: string;
+//   availableBalance: number;
+//   currentBalance: number;
+//   officialName: string;
+//   mask: string;
+//   institutionId: string;
+//   name: string;
+//   type: string;
+//   subtype: string;
+//   appwriteItemId: string;
+//   sharableId: string;
+// };
+
+declare type Bank = {
+  currentBalance: number;
+}
+
 declare type SignUpParams = {
   firstName: string;
   lastName: string;
@@ -25,46 +92,11 @@ declare type LoginUser = {
   password: string;
 };
 
-declare type User = {
-  firstName: string;
-  lastName: string;
-}
-
-// declare type User = {
-//   $id: string;
-//   email: string;
-//   userId: string;
-//   dwollaCustomerUrl: string;
-//   dwollaCustomerId: string;
-//   firstName: string;
-//   lastName: string;
-//   address1: string;
-//   city: string;
-//   state: string;
-//   postalCode: string;
-//   dateOfBirth: string;
-//   ssn: string;
-// };
-
 declare type NewUserParams = {
   userId: string;
   email: string;
   name: string;
   password: string;
-};
-
-declare type Account = {
-  id: string;
-  availableBalance: number;
-  currentBalance: number;
-  officialName: string;
-  mask: string;
-  institutionId: string;
-  name: string;
-  type: string;
-  subtype: string;
-  appwriteItemId: string;
-  sharableId: string;
 };
 
 declare type Transaction = {
@@ -85,20 +117,6 @@ declare type Transaction = {
   senderBankId: string;
   receiverBankId: string;
 };
-
-// declare type Bank = {
-//   $id: string;
-//   accountId: string;
-//   bankId: string;
-//   accessToken: string;
-//   fundingSourceUrl: string;
-//   userId: string;
-//   sharableId: string;
-// };
-
-declare type Bank = {
-  currentBalance: number;
-}
 
 declare type AccountTypes =
   | "depository"
@@ -186,15 +204,6 @@ declare interface PlaidLinkProps {
   variant?: "primary" | "ghost";
   dwollaCustomerId?: string;
 }
-
-// declare type User = sdk.Models.Document & {
-//   accountId: string;
-//   email: string;
-//   name: string;
-//   items: string[];
-//   accessToken: string;
-//   image: string;
-// };
 
 declare interface AuthFormProps {
   type: "sign-in" | "sign-up";
