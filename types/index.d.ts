@@ -37,6 +37,7 @@ declare type SearchParamProps = {
 declare type User = {
   firstName: string;
   lastName: string;
+  email: string;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
