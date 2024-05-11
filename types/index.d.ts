@@ -18,27 +18,28 @@ declare type SearchParamProps = {
 // };
 
 ////////////////////////////////////////////////////////////////////////////////
-// declare type User = {
-//   $id: string;
-//   email: string;
-//   userId: string;
-//   dwollaCustomerUrl: string;
-//   dwollaCustomerId: string;
-//   firstName: string;
-//   lastName: string;
-//   address1: string;
-//   city: string;
-//   state: string;
-//   postalCode: string;
-//   dateOfBirth: string;
-//   ssn: string;
-// };
-
 declare type User = {
+  $id: string;
+  email: string;
+  userId: string;
+  dwollaCustomerUrl: string;
+  dwollaCustomerId: string;
   firstName: string;
   lastName: string;
-  email: string;
-}
+  name: string;
+  address1: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  dateOfBirth: string;
+  ssn: string;
+};
+
+// declare type User = {
+//   firstName: string;
+//   lastName: string;
+//   email: string;
+// }
 
 ////////////////////////////////////////////////////////////////////////////////
 // declare type Bank = {
@@ -229,6 +230,7 @@ declare interface TotalBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
+  type?: 'mobile' | 'desktop'
 }
 
 declare interface RightSidebarProps {

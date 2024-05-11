@@ -18,10 +18,6 @@ import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { getLoggedInUser, signIn, signUp } from "lib/actions/user.actions";
 
-const formSchema = z.object({
-  email: z.string().email()
-})
-
 const AuthForm = ({ type }: { type: string}) => {
   const router = useRouter();
   const [user, setUser] = useState(null);
@@ -43,8 +39,21 @@ const AuthForm = ({ type }: { type: string}) => {
     setIsLoading(true);
 
     try {
-      // Sign up with Appwrite & create a Plaid Link token
+      // Sign up with Appwrite & create a Plaid token
       if (type === 'sign-up') {
+        const userData = {
+          firstName: data.firstName!,
+          lastName: data.lastName!,
+          address1: data.address1!,
+          city: data.city!,
+          state: data.state!,
+          zipCode: data.zipCode!,
+          birthDate: data.birthDate!,
+          ssn: data.ssn!,
+          email: data.email,
+          password: data.password
+        }
+
         const newUser = await signUp(data);
 
         setUser(newUser);
