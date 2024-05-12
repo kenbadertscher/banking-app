@@ -66,6 +66,7 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
       </Link>
 
       {showBalance && <Copy title={account?.shareableId}/>}
+      {/* TODO: troubleshoot shareableId - title is not being passed under my-banks page */}
     </div>
   )
 }
