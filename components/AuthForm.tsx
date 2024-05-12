@@ -178,8 +178,6 @@ const AuthForm = ({ type }: { type: string}) => {
               </Link>
           </footer>
 
-
-
         </>
       )}
     </section>
